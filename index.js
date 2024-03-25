@@ -1,5 +1,5 @@
 let posts = [];
-let MAX_LIMIT_LENGTH = 30;
+const MAX_LIMIT_LENGTH = 30;
 
 const titleInputNode = document.querySelector(".js-goods-input");
 const addButtonNode = document.querySelector(".js-goods-btn");
@@ -10,11 +10,12 @@ const goodsListNode = document.querySelector(".goods__list");
 
 const validation = (title) => {
   let result = true;
-
+  // если ничего нет в инпуте - ошибку
   if (title === "") {
     result = false;
     return result;
   }
+  // если превышает лимит - ошибку
   if (title.length > MAX_LIMIT_LENGTH) {
     result = false;
     return result;
@@ -32,18 +33,18 @@ function renderGoodsList(posts) {
   goodsListNode.innerHTML = "";
   posts.forEach((post) => {
     //задали рендеру элементы которые он выведет в верстку
-    const goodItem = document.querySelector("li");
-    const goodLabel = document.querySelector("label");
-    const goodInput = document.querySelector("input");
-    const goodTitle = document.querySelector("span");
-    const goodCloseBtn = document.querySelector("button");
+    const goodItem = document.createElement("li");
+    const goodLabel = document.createElement("label");
+    const goodInput = document.createElement("input");
+    const goodTitle = document.createElement("span");
+    const goodCloseBtn = document.createElement("button");
 
     // задали классы нашим айтемам
-    goodItem.className = ".goods__item";
-    goodLabel.className = ".js-goods-checkbox .goods__item-label";
-    goodInput.className = ".goods__item-checkbox";
-    goodTitle.className = ".goods__item-title";
-    goodCloseBtn.className = ".js-goods-close-btn .goods__close-btn";
+    goodItem.className = "goods__item";
+    goodLabel.className = "js-goods-checkbox goods__item-label";
+    goodInput.className = "goods__item-checkbox";
+    goodTitle.className = "goods__item-title";
+    goodCloseBtn.className = "js-goods-close-btn goods__close-btn";
 
     //указываем атрибуты для состояния чекбокса
     goodInput.setAttribute("unchecked", "");
@@ -70,9 +71,7 @@ const handler = (event) => {
   }
   //добавить новый элемент в "историю" в массив
   posts.push(title);
-
   renderGoodsList(posts);
-  // по клику задаем ивент который будет забирать из инпута информацию и добавлять ее в историю
 };
-
+// по клику задаем ивент который будет забирать из инпута информацию и добавлять ее в историю
 addButtonNode.addEventListener("click", handler);
