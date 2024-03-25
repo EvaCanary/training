@@ -1,0 +1,137 @@
+.main {
+  font-family: "Arimo", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding-left: 150px;
+  padding-right: 150px;
+  background-color: #000000;
+}
+
+.goods {
+  margin-top: 100px;
+  width: 930px;
+}
+
+.goods__title,
+.goods__lable {
+  display: inline-flex;
+  padding: 8px 20px 8px 20px;
+  border-radius: 40px;
+  color: #ffffff;
+  background-color: #ee32f8;
+}
+
+.goods__subtitle {
+  margin-bottom: 50px;
+  font-size: 120px;
+  color: #f3f6f9;
+}
+
+.goods__inner {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: #232323;
+}
+
+.goods__form {
+  gap: 20px;
+  display: flex;
+  align-self: start;
+  flex-direction: row;
+}
+
+.goods__input {
+  margin-bottom: 30px;
+  margin-left: 80px;
+  font-size: 20px;
+  width: 411px;
+  height: 50px;
+  opacity: 50%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #f3f6f9;
+  background: none;
+  color: #f3f6f9;
+}
+.goods__input::placeholder {
+  font-size: 30px;
+}
+.goods__btn {
+  padding: 30px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 30px;
+  background: url(./Vector.svg);
+  background-color: #ee32f8;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.goods__btn:hover {
+  background-color: #ee32f8;
+}
+
+.goods__close-btn {
+  border: none;
+  cursor: pointer;
+  width: 23px;
+  height: 23px;
+  background: url(./close.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.goods__list {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+.goods__item {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 790px;
+  height: 71px;
+  border-radius: 10px;
+  background-color: #3a3939;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.goods__item-lable {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.goods__item-title {
+  line-height: 71px;
+  font-size: 20px;
+  color: #f3f6f9;
+}
+.goods__item-checkbox {
+  margin: 0 auto;
+  appearance: none;
+  opacity: 0;
+  list-style-type: circle;
+  border: 1px solid #f3f6f9;
+  border-radius: 50%;
+  min-width: 19px;
+  min-height: 19px;
+  color: #f3f6f9;
+  opacity: 30%;
+  cursor: pointer;
+}
+
+.goods__item-checkbox:checked {
+  border-color: #f3f6f9;
+  background-color: #ee32f8;
+  opacity: 30%;
+}
